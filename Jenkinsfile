@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        lang = 'cc'
+    }
     stages {
         stage('Stage 1') {
             steps {
@@ -14,7 +17,7 @@ pipeline {
             }
             steps {
                 echo 'build is null'
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} and lang is ${env.lang}"
             }
         }
         stage('Stage 3') {
