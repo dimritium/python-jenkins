@@ -1,9 +1,9 @@
 pipeline {
-    agent any 
+    agent any
     stages {
         stage('Stage 1') {
             steps {
-                echo 'Hello world 3!' 
+                echo 'Hello world 3!'
             }
         }
         stage('Stage 2') {
@@ -14,6 +14,14 @@ pipeline {
             }
             steps {
                 echo 'build is null'
+            }
+            when {
+                expression {
+                    currentBuild.result != null
+                }
+                steps {
+                    echo 'build not null'
+                }
             }
         }
     }
