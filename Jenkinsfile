@@ -15,7 +15,9 @@ pipeline {
             steps {
                 echo 'build is null'
             }
-            when {
+        }
+        stage('Stage 3') {
+             when {
                 expression {
                     currentBuild.result != null
                 }
