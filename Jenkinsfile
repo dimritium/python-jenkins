@@ -24,6 +24,7 @@ pipeline {
             }
             steps {
                 echo 'build not null'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }
