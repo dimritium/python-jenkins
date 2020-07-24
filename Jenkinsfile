@@ -17,13 +17,13 @@ pipeline {
             }
         }
         stage('Stage 3') {
-             when {
+            when {
                 expression {
                     currentBuild.result != null
                 }
-                steps {
-                    echo 'build not null'
-                }
+            }
+            steps {
+                echo 'build not null'
             }
         }
     }
