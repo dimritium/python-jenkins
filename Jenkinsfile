@@ -7,12 +7,13 @@ pipeline {
             }
         }
         stage('Stage 2') {
-            steps {
-                if(currentBuild.result == null) {
-                    echo 'Null build'
-                } else {
-                    echo 'Not null build'
+            when {
+                expression {
+                    currentBuild.result == null
                 }
+            }
+            steps {
+                echo 'build is null'
             }
         }
     }
